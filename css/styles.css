@@ -1,0 +1,127 @@
+
+/* Start of the sidebar style */
+
+.sidebar-nav{
+	position: relative;
+	top: 70px;
+}
+
+.sidebar-nav > .sidebar-brand {
+	height: 65px;
+	font-size: 25px;
+	line-height: 60px;
+	position: relative;
+	left: -15px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+	color: #999999;
+}
+
+#sidebar-wrapper{
+    width:250px;
+}
+
+ul{
+	list-style-type: none;
+}
+
+li{
+	line-height: 60px;
+	font-size: 20px;
+}
+
+
+
+/* End of the sidebar style */
+
+
+/* Carousel Style */
+.carousel {
+    margin-bottom: 30px;
+    position: relative;
+    top: -505px;
+    left: 250px;
+    width: 880px;
+ 
+}
+
+.carousel .item {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+    margin-top:auto;
+    height: 550px;
+    width: 880px;
+}
+
+.carousel img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+    margin-top:auto;
+}
+
+
+/* End of Carousel Style */ 
+
+
+
+/*Start of new review style */
+
+#newReviews {
+    position: relative;
+    top: -1050px;
+    left: 1120px;
+    width: 300px;
+}
+
+#newReviewHeader {
+    position: relative;
+    left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: green;
+    line-height: 50px;
+}
+
+.newReview{
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.userInReview{
+    color: blue;
+    text-decoration: underline;
+}
+
+
+.movieTitleInReview {
+    color: blue;
+    text-decoration: underline;
+}
+
+/*End of new review style */
+
+
+/*Start of popular movie list style */
+.movieTitleInList {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#popularMoviesTable{
+    position: relative;
+    top: -1000px;
+}
+
+#popularMovieListTitle {
+    position: relative;
+    top: -1000px;
+}
+
+
+
+/* End of popular movie list style */
+
