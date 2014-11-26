@@ -1,0 +1,78 @@
+
+/* Start of the personal-info style */
+
+.myprofile{
+    position: relative;
+    top: 70px;
+    left: 20px;
+    height:300px;
+}
+
+.mypic{
+    position: relative;
+    float:left;
+    left: 50px;
+    width: 240px;
+}
+
+.intropic{
+    width: 240px;
+}
+
+
+.personalinfo{
+    position: relative;
+    float:left;
+    left: 100px;
+    width: 300px;
+}
+
+.img-responsive{
+    height: 120px;
+    width: 120px;
+}
+
+#imgtd{
+    width:150px;
+}
+
+/* End of the personal-info style */
+
+
+/* Start of the friend style */
+#friends{
+    position: relative;
+    top: 100px;
+    left: 50px;
+    float:left;
+    width:1000px;
+}
+
+#title{
+    font-size:150%;
+    font-style: italic;
+}
+
+.header{
+    font-size:150%;
+    font-style:italic;
+    color:gray;
+}
+
+/* End of the friend style */
+
+
+
+#myReviews{
+    width:1000px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    float:left;
+}
+
+#myReviewHeader{
+    font-size: 150%;
+    font-style: italic;;
+    color: grey;
+}

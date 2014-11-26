@@ -33,9 +33,8 @@
 			<div class="collapse navbar-collapse navHeaderCollapse">
 
 				<ul class="nav navbar-nav nvabar-right">
-					<li><a href="#">Log in</a></li>
-					<li><a href="#">Register</a></li>
-					<li><a href="#">Homepage</a></li>
+					<li><a href="#login" data-toggle="modal">Log in</a></li>
+					<li><a href="#register" data-toggle="modal">Register</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Share to <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -46,7 +45,7 @@
 							<li><a href="#">Weibo</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Contact us</a></li>
+					<li><a href="#contact" data-toggle="modal">Contact us</a></li>
 				</ul>
 			</div>
 		</div>
@@ -107,20 +106,44 @@
 
 
 	 <!-- Start of new reviews -->
-	 <div id="newReviews">
+	<div id="newReviews">
 	 	<h1 id="newReviewHeader">New Reviews</h1>
+	 	<?php
+
+	 			print("<p>\n");
+  print("Winner, winner, chicken dinner!\n");
+  print("</p>\n");
+
+	 		?>
 	 	<ul id="newReviewList">
+	 		<?php
+
+//	 			$current_time = time();
+//				$num_seconds = $current_time % 60;
+				print("<li class=\"newReview\"><span class=\"userInReview\">@ILoveAvengers </span><span>commented on </span><span class=\"movieTitleInReview\">Avengers: </span><span>This is an awesome movie! I love it!</span></li>\n");
+				print("<li class=\"newReview\"><span class=\"userInReview\">@ILoveAvengers </span><span>commented on </span><span class=\"movieTitleInReview\">Avengers: </span><span>This is an awesome movie! I love it!</span></li>\n");
+				print("<li class=\"newReview\"><span class=\"userInReview\">@ILoveAvengers </span><span>commented on </span><span class=\"movieTitleInReview\">Avengers: </span><span>This is an awesome movie! I love it!</span></li>\n");
+//				print("<li class="newReview"><span class="userInReview">@ILoveAvengers </span><span>commented on </span><span class="movieTitleInReview">Avengers: </span><span>This is an awesome movie! I love it!</span></li>\n");
+//				print("<li class="newReview"><span class="userInReview">@ILoveAvengers </span><span>commented on </span><span class="movieTitleInReview">Avengers: </span><span>This is an awesome movie! I love it!</span></li>\n");
+
+	 		?>
+
+	 		<!--
 	 		<li class="newReview"><span class="userInReview">@ILoveAvengers </span><span>commented on </span><span class="movieTitleInReview">Avengers: </span><span>This is an awesome movie! I love it!</span></li>
 	 		<li class="newReview"><span class="userInReview">@MovieLover </span><span>commented on </span><span class="movieTitleInReview">X-Men: Days of Future Past: </span><span>Best movie of 2015! I am looking forward to the next X-men movie already!</span></li>
 	 		<li class="newReview"><span class="userInReview">@User12345 </span><span>commented on </span><span class="movieTitleInReview">Frozen: </span><span>This is a good movie. The plot is simple, but the music is fatanstic!</span></li>
 	 		<li class="newReview"><span class="userInReview">@StudentOfUNCCS </span><span>commented on </span><span class="movieTitleInReview">The Matrix: </span><span>Good movie. Recommend.</span></li>
 	 		<li class="newReview"><span class="userInReview">@abcdefg </span><span>commented on </span><span class="movieTitleInReview">How to Train Your Dragon: </span><span>The dragons are soooooooo cute! </span></li>
-	 	</ul>
-	 </div>
-	 <!-- End of new reviews -->
+	 		-->
 
-	 <!-- Start of popular movie list -->
-	 <table class="table" id="popularMoviesTable">
+
+	 	</ul>
+	</div>
+	<!-- End of new reviews -->
+
+
+	<!-- Start of popular movie list -->
+	<table class="table" id="popularMoviesTable">
 	 	<h1 id="popularMovieListTitle">Popular Movies</h1>
 	 	<tbody id="popularMovies">
 	 		<tr>
@@ -138,18 +161,131 @@
 	 			<td><img src="img/sample10.jpg" alt="" class="img-responsive"><span class="movieTitleInList">The Hunger Games</span></td>	
 	 		</tr>
 	 	</tbody>
-	 </table>
+	</table>
 
 	<!-- End of popular movie list -->
 
 
 
+	<!-- start of register page -->
+	<div class="modal fade" id="register" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form class="form-horizontal" id="register-form">
+					<div class="modal-header">
+						<h2>Register</h2>
+					</div>
+					<div class="modal-body">
+
+						<div class="form-group">
+							<label for ="register-username" class="col-lg-2 control-label">Username:</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="register-username" placeholder="Enter the username you want to use">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for ="register-pwd" class="col-lg-2 control-label">Password:</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="register-pwd" placeholder="Enter your password">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for ="register-email" class="col-lg-2 control-label">Email:</label>
+							<div class="col-lg-10">
+								<input type="email" class="form-control" id="register-email" placeholder="you@example.com">
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">			
+						<button class="btn btn-primary" type="submit" id="register-submit">Submit</button>
+						<a class="btn btn-default" data-dismiss="modal" id="register-close">Close</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end of register page -->
 
 
+	<!-- start of login page -->
+	<div class="modal fade" id="login" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form class="form-horizontal">
+					<div class="modal-header">
+						<h2>Log in</h2>
+					</div>
+					<div class="modal-body">
 
+						<div class="form-group">
+							<label for ="login-username" class="col-lg-2 control-label">Username:</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="login-username" placeholder="Enter your username">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for ="login-pwd" class="col-lg-2 control-label">Password:</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="login-pwd" placeholder="Enter your password">
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">			
+						<button class="btn btn-primary" type="submit">Submit</button>
+						<button class="btn btn-default">Forgot username or password?</button>
+						<a class="btn btn-default" data-dismiss="modal">Close</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end of login page -->
+
+
+	<!-- start of contact page -->
+	<div class="modal fade" id="contact" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form class="form-horizontal">
+					<div class="modal-header">
+						<h2>Contact us</h2>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for ="contact-email" class="col-lg-3 control-label">Your email:</label>
+							<div class="col-lg-9">
+								<input type="email" class="form-control" id="contact-email" placeholder="you@example.com">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for ="contact-username" class="col-lg-3 control-label">Username:</label>
+							<div class="col-lg-9">
+								<input type="text" class="form-control" id="contact-username" placeholder="Optional">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for ="contact-msg" class="col-lg-3 control-label">Message:</label>
+							<div class="col-lg-9">
+								<textarea class="form-control" rows="8"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">			
+						<button class="btn btn-primary" type="submit">Submit</button>
+						<a class="btn btn-default" data-dismiss="modal">Close</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- end of contact page -->
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script src="js/Homepage.js"></script>
+
+	
 
 
 

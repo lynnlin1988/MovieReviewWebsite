@@ -1,0 +1,88 @@
+
+/* Start of the movie-info style */
+
+.movieinfo{
+    position: relative;
+    top: 70px;
+    left: 20px;
+    height:300px;
+}
+
+.moviepic{
+    position: relative;
+    float:left;
+    left: 50px;
+    width: 240px;
+}
+
+.intropic{
+    width: 240px;
+}
+
+
+.star{
+    position: relative;
+    float:left;
+    left: 60px;
+    width: 300px;
+}
+
+.displayedscore{
+    position: relative;
+    float:left;
+    left: 50px;
+    width:300px;
+}
+
+/* End of the movie-info style */
+
+
+/* Start of the movie-intro style */
+.movieintro{
+    position: relative;
+    top: 100px;
+    left: 50px;
+    float:left;
+    width:1000px;
+}
+
+#title{
+    font-size:150%;
+    font-style: italic;
+}
+
+.header{
+    font-size:150%;
+    font-style:italic;
+    color:gray;
+}
+
+/* End of the movie-intro style */
+
+.comment{
+    position: relative;
+    top: 100px;
+    left: 50px;
+    float:left;
+    width:1000px;
+}
+
+#newcomment{
+    width:1000px;
+    height: 200px;
+}
+
+
+#newReviews{
+    width:1000px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    float:left;
+}
+
+#newReviewHeader{
+    font-size: 150%;
+    font-style: italic;;
+    color: grey;
+}
