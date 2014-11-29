@@ -1,0 +1,1 @@
+<li><a href="#logout" data-toggle="modal">Log out</a></li>

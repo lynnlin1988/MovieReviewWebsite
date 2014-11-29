@@ -6,6 +6,24 @@ $(document).ready(function(){
 //	alert('test');
 
 
+/*
+	$('#login_form').on('submit', function (e) {
+	e.stopPropagation();
+	e.preventDefault();
+	$.ajax('login.php',
+	       {type: 'GET',
+		data: $('#login_form').serialize(),
+		cache: false,
+		success: function () {
+		    alert('Login Successful'); },
+		error: function () {
+		    alert('Login Failed');}
+	       });
+    });
+
+  */
+
+
 	$('#register-form').on('submit', function(e) {
 	//	alert('submitted')
 		submit_register();

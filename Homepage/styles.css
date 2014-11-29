@@ -121,6 +121,11 @@ li{
     top: -1000px;
 }
 
+#logout-warning {
+    width: 300px;
+    position: relative;
+    left: 30px;
+}
 
 
 /* End of popular movie list style */
