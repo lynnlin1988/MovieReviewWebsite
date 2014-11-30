@@ -34,3 +34,12 @@
 			</div>
 		</div>
 	</div>
+
+<!--
+	<?php
+	$action = $_Get['action'];
+	echo '$action';
+
+
+	?>
+	-->

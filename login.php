@@ -5,11 +5,12 @@ if(empty($_POST)==false){
 	$username=$_POST['username'];
 	$password=$_POST['password'];
 
-	if(empty($username) || empty($password)){
-		$errors[]='You need to enter a username and password';
-	}
-	else if (user_exists($username)===false) {
-		$errors[]=$username;
+//	if(empty($username) || empty($password)){
+//		$errors[]='You need to enter a username and password';
+//	}
+	 if (user_exists($username)===false) {
+		echo '<script type="text/javascript">alert("This username does not exist.");</script>';
+		header("refresh: 0; url=index.php?");
 	}
 	else {
 		$login = login($username, $password);

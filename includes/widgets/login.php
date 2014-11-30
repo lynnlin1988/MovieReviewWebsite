@@ -22,7 +22,7 @@
 					</div>
 					<div class="modal-footer">			
 						<button class="btn btn-primary" type="submit">Submit</button>
-						<button class="btn btn-default">Forgot username or password?</button>
+						<button class="btn btn-default">Forgot username or password?</button> 
 						<a class="btn btn-default" data-dismiss="modal">Close</a>
 					</div>
 				</form>
