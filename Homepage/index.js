@@ -28,7 +28,8 @@ $(document).ready(function(){
 /*
 var $reviews = $("#newReviews");
 setInterval(function () {
-    $reviews.load("index.html #newReviews");
+    $reviews.load("../index.php #newReviews");
+ //	$reviews.load("../includes/widgets/newReviews.php");
 }, 2000);
 */
 

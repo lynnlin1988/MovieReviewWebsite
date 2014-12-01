@@ -48,10 +48,17 @@
 					<li><a href="#contact" data-toggle="modal">Contact us</a></li>
 					<?php
 						if(logged_in()===true) {
+							include 'myPageNav.php';
+						} else {
+						}
+					?>
+					<?php
+						if(logged_in()===true) {
 							include 'logoutNav.php';
 						} else {
 						}
 					?>
+
 				</ul>
 			</div>
 		</div>

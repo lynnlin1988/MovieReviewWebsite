@@ -15,7 +15,8 @@ if(empty($_POST)==false){
 	else {
 		$login = login($username, $password);
 		if ($login===false) {
-			$errors[]='This username/password combination is incorrect';
+			echo '<script type="text/javascript">alert("Wrong username or password.");</script>';
+			header("refresh: 0; url=index.php?");
 		} else {
 			$_SESSION['user_id']=$login;
 			header('Location: index.php');
@@ -23,7 +24,7 @@ if(empty($_POST)==false){
 		}
 	}
 
-	print_r($errors);
+//	print_r($errors);
 
 }
 

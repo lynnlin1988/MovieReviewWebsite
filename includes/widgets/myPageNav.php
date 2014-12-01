@@ -1,0 +1,1 @@
+<li><a href="PersonalPage/index.php" data-toggle="modal">My page</a></li>

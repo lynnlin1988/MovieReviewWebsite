@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Home Page</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="http://www.cs.unc.edu/Courses/comp426-f14/jquery-1.11.1.js" type="text/javascript"></script>
+	<script src="../js/bootstrap-tooltip.js"></script>
+	<script src="../js/bootstrap-popover.js"></script>
+	<script src="index.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+	<!-- Start of the navigation bar -->
+	<div class="navbar navbar-inverse navbar-fixed-top"> 
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">Home Page</a>
+
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-inverse">Submit</button>
+				</form>
+
+				<button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse navHeaderCollapse">
+
+				<ul class="nav navbar-nav nvabar-right">
+					<li><a href="#">Log in</a></li>
+					<li><a href="#">Register</a></li>
+					<li><a href="#">Homepage</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Share to <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Google+</a></li>
+							<li><a href="#">Facebook</a></li>
+							<li><a href="#">Twitter</a></li>
+							<li><a href="#">WeChat</a></li>
+							<li><a href="#">Weibo</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Contact us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div> 
+	<!--End of navigation bar -->
+
+
+	<div class="myprofile">
+		<div class="mypic"><img src="img/no-profile-img.gif" alt="" class="intropic"></div>
+		<div class="personalinfo">
+			<p id="title">Albert Tan</p>
+			<p class="header">Age</p><p id="age">23</p>
+			<p class="header">Gender</p><p id="gender">Don't Tell You!</p>
+			<p class="header">Location</p><p id="Writer">Chapel Hill,NC</p>
+			<p class="header">Interest</p><p id="Tag">Action, Adventure,  Fantasy</p>
+			<button>Edit My Profile</button>
+		</div>
+	</div>
+	<!-- End of the personal information -->
+
+	<!-- Start of the friend introduction -->
+	<div  id="friends">
+	<table class="table">
+	 	<h1  id="title">My Friends</h1>
+	 	<tbody id="friendprofile">
+	 		<tr>
+	 			<td id="imgtd"><img src="img/sample1.jpg" alt="" class="img-responsive" id="sample1"><span class="movieTitleInList">Avatar</span></td>
+	 			<td id="imgtd"><img src="img/sample2.jpg" alt="" class="img-responsive" id="sample2"><span class="movieTitleInList">Alice in Wonderland</span></td>
+	 			<td id="imgtd"><img src="img/sample3.jpg" alt="" class="img-responsive" id="sample3"><span class="movieTitleInList">Titanic</span></td>
+	 			<td id="imgtd"> <img src="img/sample4.jpg" alt="" class="img-responsive" id="sample4"><span class="movieTitleInList">Inception</span></td>
+	 			<td id="imgtd"><img src="img/sample5.jpg" alt="" class="img-responsive" id="sample5"><span class="movieTitleInList">Pirates of the Caribbean</span></td>	
+	 		</tr>
+	 	</tbody>
+	 </table>
+	</div>
+	<!-- End of the friend introduction -->
+	 <!-- Start of new reviews -->
+	 <div id="myReviews">
+	 	<h1 id="myReviewHeader">My Reviews</h1>
+	 	<ul id="myReviewList">
+	 		<li class="newReview"><span class="movieTitleInReview">Avengers: </span><span>This is an awesome movie! I love it!</span></li>
+	 		<li class="newReview"><span class="movieTitleInReview">X-Men: Days of Future Past: </span><span>Best movie of 2015! I am looking forward to the next X-men movie already!</span></li>
+	 		<li class="newReview"><span class="movieTitleInReview">Frozen: </span><span>This is a good movie. The plot is simple, but the music is fatanstic!</span></li>
+	 		<li class="newReview"><span class="movieTitleInReview">The Matrix: </span><span>Good movie. Recommend.</span></li>
+	 		<li class="newReview"><span class="movieTitleInReview">How to Train Your Dragon: </span><span>The dragons are soooooooo cute! </span></li>
+	 	</ul>
+	 </div>
+
+</body>
+</html>	
