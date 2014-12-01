@@ -1,5 +1,5 @@
 <?php
-include '../core/init.php';
+include 'core/init.php';
 
 ?>
 
@@ -8,14 +8,14 @@ include '../core/init.php';
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>My Home Page</title>
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
-	<link href="styles.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="PersonalPage/styles.css" rel="stylesheet">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="../js/bootstrap.js"></script>
+	<script src="js/bootstrap.js"></script>
 	<script src="http://www.cs.unc.edu/Courses/comp426-f14/jquery-1.11.1.js" type="text/javascript"></script>
-	<script src="../js/bootstrap-tooltip.js"></script>
-	<script src="../js/bootstrap-popover.js"></script>
-	<script src="index.js" type="text/javascript"></script>
+	<script src="js/bootstrap-tooltip.js"></script>
+	<script src="js/bootstrap-popover.js"></script>
+	
 
 </head>
 
@@ -23,7 +23,7 @@ include '../core/init.php';
 
 	<!-- Start of the navigation bar -->
 	<?php
-	include '../includes/widgets/navigation.php';
+	include 'includes/widgets/navigation.php';
 	?>
 	<!--End of navigation bar -->
 
