@@ -166,14 +166,14 @@ include 'core/init.php';
 			inner join a6_movie on a6_comment.MovieID=a6_movie.id
 			where a6_user.ID=$memberid");
 		echo "<ul id=\"myReviewList\">";
-		if(!$row["Title"]){
-			echo "<li style=\"color:grey\">There's no comment made by ";
-			$myquery = mysqli_query($con,"SELECT * FROM a6_user where id=$memberid");
-			while($row = $myquery->fetch_assoc()) {echo $row["Username"];}
-			echo ".</li>";
-		}
+		while($row = $myquery->fetch_assoc()) {echo $row["Username"];}
+		echo ".</li>";
 		while($row = $myreviews->fetch_assoc()) {
 			echo "<li class=\"newReview\">Comment on <span class=\"movieTitleInReview\">'".$row["Title"]."': </span><span>".$row["Content"]."</span></li>";
+			if(!$row["Title"]){
+				echo "<li style=\"color:grey\">There's no comment made by ";
+				$myquery = mysqli_query($con,"SELECT * FROM a6_user where id=$memberid");
+			}
 		}
 
 		echo "</ul>";

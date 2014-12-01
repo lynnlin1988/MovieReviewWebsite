@@ -56,30 +56,26 @@ include 'core/init.php';
 			echo "</p>";
 
 			echo "<p class=\"header\">Country: </p>";
-			echo "<p>";
 			$myquery = mysqli_query($con,"SELECT * FROM a6_user where id=$memberid");
 			while($row = $myquery->fetch_assoc()) {
 				if(!$row["Country"]){
-					echo "Don't tell you!";
+					echo "<p style=\"color:grey\">Tell us about your country!</p>";
 				}else
 				{
-					echo $row["Country"];
+					echo "<p>".$row["Country"]."</p>";
 				}
 				
 			}
-			echo "</p>";
 			echo "<p class=\"header\">Countact: </p>";
-			echo "<p>";
 			$myquery = mysqli_query($con,"SELECT * FROM a6_user where id=$memberid");
 			while($row = $myquery->fetch_assoc()) {
 				if(!$row["Email"]){
-					echo "Don't tell you!";
+					echo "<p style=\"color:grey\">Tell us about your contact!</p>";
 				}else
 				{
-					echo $row["Email"];
+					echo "<p>".$row["Email"]."</p>";
 				}	
 			}
-			echo "</p>";
 
 
 			echo "<p class=\"header\">Interest: </p>";
@@ -103,7 +99,7 @@ include 'core/init.php';
 			$myquery = mysqli_query($con,"SELECT * FROM a6_user where id=$memberid");
 			while($row = $myquery->fetch_assoc()) {
 				if(!$row["Summary"]){
-					echo "<p style=\"color:grey \">Tell us about you!";
+					echo "<p style=\"color:grey \">Tell us about your motto!";
 				}else
 				{
 					echo "<p>".$row["Summary"];
@@ -140,7 +136,7 @@ include 'core/init.php';
 					} else {
 						echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\" class=\"intropic\"></p>";
 					}
-					echo "<p>".$row["Username"]."</p></td>";
+					echo "<p style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Username"]."</p></td>";
 					if($i%5==0){
 						echo "</tr>";
 					}
@@ -166,15 +162,17 @@ include 'core/init.php';
 			inner join a6_movie on a6_comment.MovieID=a6_movie.id
 			where a6_user.ID=$memberid");
 		echo "<ul id=\"myReviewList\">";
-		if(!$row["Title"]){
-			echo "<li style=\"color:grey\">Let's Make Some Comments on Your Favorite Movies!</li>";
-		}
+		
 		while($row = $myreviews->fetch_assoc()) {
+			if(!$row["Title"]){
+				echo "<li style=\"color:grey\">Let's Make Some Comments on Your Favorite Movies!</li>";
+			}
 			echo "<li class=\"newReview\">Comment on <span class=\"movieTitleInReview\">'".$row["Title"]."': </span><span>".$row["Content"]."</span></li>";
 		}
 
 		echo "</ul>";
 	echo "</div>";
+	$con->close();
 
 ?>
 <div>

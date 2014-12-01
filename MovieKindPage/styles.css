@@ -1,0 +1,24 @@
+
+/* Start of the personal-info style */
+
+.movielist{
+    position: relative;
+    top: 70px;
+    left: 20px;
+    height:300px;
+}
+
+
+#imgtd{
+    width:220px;
+
+}
+
+.singleblank{
+    width:240px;
+    height:360px;
+}
+
+#movietitle{
+    width:220px;
+}
