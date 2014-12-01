@@ -1,1 +1,1 @@
-<li><a href="PersonalPage/index.php" data-toggle="modal">My page</a></li>
+<li><a href="./personalPage.php" data-toggle="modal">My page</a></li>
