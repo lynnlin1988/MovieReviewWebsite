@@ -20,11 +20,13 @@ function login($username, $password){
 	$userID=user_id_from_username($username);
 
 	$username=sanitize($username);
+	$password=md5($password);
 	$query=mysql_query("SELECT COUNT(*) FROM a6_user WHERE Username='$username' AND Password = '$password'");
 	return (mysql_result($query, 0)==1 ) ? $userID : false;
 }
 
 function register($username, $password, $email){
+	$password=md5($password);
 	$mysql=mysql_query("INSERT INTO a6_user (Username, Password, Email) VALUES ('$username', '$password', '$email')");
 	$userID=user_id_from_username($username);
 	return $username;
