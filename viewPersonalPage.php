@@ -122,33 +122,32 @@ include 'core/init.php';
 	echo "<div id=\"friends\">";
 		echo "<table class=\"friendtable\">";
 		echo "<h1 id=\"title\">Friends</h1>";
-		$myfriends = mysqli_query($con,"SELECT * FROM a6_user inner join a6_friend on a6_friend.UserAID=a6_user.id where a6_friend.UserBID=$memberid");
+		$myfriends = mysqli_query($con,"SELECT * FROM a6_user inner join a6_friend on a6_friend.UserBID=a6_user.id where a6_friend.UserAID=$memberid");
 		$i=0;
-		while($row = $myfriends->fetch_assoc()) {
-				if(!$row["Username"]){
-					echo "<p style=\"color:grey \">Try to find some friends!";
-				}else
-				{
-					if($i%5==0){
-						echo "<tr>";
-					}
-					$i=$i+1;
-					echo "<td>";
-					$picname="img/user".$row["ID"].".jpg";
-					if (file_exists($picname)) {
-						echo "<p id=\"imgtd\"><img src=".$picname." alt=\"\" class=\"intropic\"></p>" ;
-					} else {
-						echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\" class=\"intropic\"></p>";
-					}
-					echo "<p style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Username"]."</p></td>";
-					if($i%5==0){
-						echo "</tr>";
-					}
-				}	
-			}
-		if($i%5!=0){
-			echo "</tr>";
+		if($myfriends->num_rows==0){
+					echo "<tr><p style=\"color:grey \">No friend relationship found!</tr>";
 		}
+		while($row = $myfriends->fetch_assoc()) {
+				if($i%5==0){
+					echo "<tr>";
+				}
+				$i=$i+1;
+				echo "<td>";
+				$picname="img/user".$row["ID"].".jpg";
+				if (file_exists($picname)) {
+					echo "<p id=\"imgtd\"><img src=".$picname." alt=\"\" class=\"intropic\"></p>" ;
+				} else {
+					echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\" class=\"intropic\"></p>";
+				}
+				echo "<p style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Username"]."</p></td>";
+				if($i%5==0){
+					echo "</tr>";
+				}
+			}	
+		
+			if($i%5!=0){
+				echo "</tr>";
+			}
 
 		echo "</table>";
 	echo "</div>";
