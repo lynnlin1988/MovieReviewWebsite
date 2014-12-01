@@ -1,4 +1,7 @@
+<?php
+include '../core/init.php';
 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -13,48 +16,11 @@
 	</head>
 
 <body>
-<div>
+
 	<!-- Start of the navigation bar -->
-	<div class="navbar navbar-inverse navbar-fixed-top"> 
-		<div class="container">
-			<div class="navbar-header">
-				<a href="#" class="navbar-brand">Home Page</a>
-
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-inverse">Submit</button>
-				</form>
-
-				<button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-
-			<div class="collapse navbar-collapse navHeaderCollapse">
-
-				<ul class="nav navbar-nav nvabar-right">
-					<li><a href="#">Log in</a></li>
-					<li><a href="#">Register</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Share to <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Google+</a></li>
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">WeChat</a></li>
-							<li><a href="#">Weibo</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Contact us</a></li>
-				</ul>
-			</div>
-		</div>
-	</div> 
+	<?php
+	include '../includes/widgets/navigation.php';
+	?>
 	<!--End of navigation bar -->
 
 
@@ -62,7 +28,8 @@
 	<!-- Start of the movie information -->
 	<?php
 		echo "<div class=\"movieinfo\">";
-		$movienumber=7;
+		$movienumber=$_GET["a_tmp"];
+		$usernumber=0;
 			echo "<div class=\"moviepic\"><img src=\"img/sample".$movienumber.".jpg\" alt=\"\" class=\"intropic\"></div>";
 			echo "<div class=\"star\">";
 				
@@ -140,22 +107,74 @@
 
 	<div class="comment">
 		<div class="header">Comments</div>
-		<textarea id="newcomment">Please Insert Your Comment</textarea>
-		<button id="submitcomment">Submit</button>
+		
+		<?php
+			echo "<textarea id=\"newcomment\">Please Insert Your Comment</textarea>";
+			$con = mysqli_connect("localhost:3306","root","");
+				if(!$con)
+				{
+					die('Could not connect: ' . mysqli_error());
+				}
+
+				mysqli_select_db($con,"moviereviewwebsite");
+
+				echo "<button id=\"submitcomment\">Submit</button>";
+		?>
+		
 	</div>
 	<!-- End of Comment -->
 	 <!-- Start of new reviews -->
 	 <div id="newReviews">
-	 	<h1 id="newReviewHeader">New Reviews</h1>
-	 	<ul id="newReviewList">
-	 		<li class="newReview"><span class="userInReview">@ILoveAvengers </span><span>commented on </span><span class="movieTitleInReview">Avengers: </span><span>This is an awesome movie! I love it!</span></li>
-	 		<li class="newReview"><span class="userInReview">@MovieLover </span><span>commented on </span><span class="movieTitleInReview">X-Men: Days of Future Past: </span><span>Best movie of 2015! I am looking forward to the next X-men movie already!</span></li>
-	 		<li class="newReview"><span class="userInReview">@User12345 </span><span>commented on </span><span class="movieTitleInReview">Frozen: </span><span>This is a good movie. The plot is simple, but the music is fatanstic!</span></li>
-	 		<li class="newReview"><span class="userInReview">@StudentOfUNCCS </span><span>commented on </span><span class="movieTitleInReview">The Matrix: </span><span>Good movie. Recommend.</span></li>
-	 		<li class="newReview"><span class="userInReview">@abcdefg </span><span>commented on </span><span class="movieTitleInReview">How to Train Your Dragon: </span><span>The dragons are soooooooo cute! </span></li>
+	 	<?php
+	 		$con = mysqli_connect("localhost:3306","root","");
+			if(!$con)
+			{
+				die('Could not connect: ' . mysqli_error());
+			}
+
+			mysqli_select_db($con,"moviereviewwebsite");
+	 		$moviequery = mysqli_query($con,"SELECT * FROM a6_movie where ID=$movienumber");
+	 		echo "<h1 id=\"newReviewHeader\">New Reviews on ";
+	 			
+	 		while($row = $moviequery->fetch_assoc()){
+					echo $row["Title"];
+				}
+	 		echo "</h1><ul id=\"newReviewList\">";
+			
+			$moviecommentquery = mysqli_query($con,"SELECT * FROM a6_comment inner join a6_user on a6_comment.UserID=a6_user.ID where a6_comment.MovieID=$movienumber");
+			while($row = $moviecommentquery->fetch_assoc()){
+				echo "<li><a href\"#\">".$row["Username"]."'s comment: ".$row["Content"]."</a></li>";
+			}
+			$con->close();
+		?>
 	 	</ul>
 	 </div>
-</div>
+
+
+	<!-- start of register page -->
+	<?php
+	include 'includes/widgets/register.php';
+	?>
+	<!-- end of register page -->
+
+
+	<!-- start of login page -->
+	<?php
+		include 'includes/widgets/login.php';
+	?>
+	<!-- end of login page -->
+
+	<?php
+		include 'includes/widgets/logout.php';
+	?>
+
+
+	<!-- start of contact page -->
+	<?php
+		include 'includes/widgets/contact.php';
+	?>
+	<!-- end of contact page -->
+
 
 </body>
 </html>	

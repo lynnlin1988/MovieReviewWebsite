@@ -1,3 +1,8 @@
+<?php
+include '../core/init.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,47 +22,9 @@
 <body>
 
 	<!-- Start of the navigation bar -->
-	<div class="navbar navbar-inverse navbar-fixed-top"> 
-		<div class="container">
-			<div class="navbar-header">
-				<a href="#" class="navbar-brand">Home Page</a>
-
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-inverse">Submit</button>
-				</form>
-
-				<button class="navbar-toggle" data-toggle = "collapse" data-target=".navHeaderCollapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-
-			<div class="collapse navbar-collapse navHeaderCollapse">
-
-				<ul class="nav navbar-nav nvabar-right">
-					<li><a href="#">Log in</a></li>
-					<li><a href="#">Register</a></li>
-					<li><a href="#">Homepage</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Share to <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Google+</a></li>
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">WeChat</a></li>
-							<li><a href="#">Weibo</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Contact us</a></li>
-				</ul>
-			</div>
-		</div>
-	</div> 
+	<?php
+	include '../includes/widgets/navigation.php';
+	?>
 	<!--End of navigation bar -->
 
 <?php
@@ -218,6 +185,31 @@
 	<p> </p>
 	<p> </p>
 </div>
+
+	<!-- start of register page -->
+	<?php
+	include 'includes/widgets/register.php';
+	?>
+	<!-- end of register page -->
+
+
+	<!-- start of login page -->
+	<?php
+		include 'includes/widgets/login.php';
+	?>
+	<!-- end of login page -->
+
+	<?php
+		include 'includes/widgets/logout.php';
+	?>
+
+
+	<!-- start of contact page -->
+	<?php
+		include 'includes/widgets/contact.php';
+	?>
+	<!-- end of contact page -->
+
 
 </body>
 </html>	
