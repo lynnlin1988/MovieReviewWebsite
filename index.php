@@ -9,13 +9,13 @@ include 'core/init.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Movie Review Website</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="Homepage/styles.css" rel="stylesheet">
 	<script src="js/bootstrap-tooltip.js"></script>
 	<script src="js/bootstrap-popover.js"></script>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<script src="Homepage/popover.js"></script>
 </head>
 
 <body>
@@ -56,7 +56,7 @@ include 'core/init.php';
 	<!-- Start of popular movie list -->
 	<script>
 	$(function ()
-	{ $(".example").popover();
+	{ $("#example").popover();
 	});
 	</script>
 
