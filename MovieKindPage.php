@@ -101,7 +101,11 @@
 					echo "<td class=\"singleblank\">";
 					$picname="img/sample".$row["MovieID"].".jpg";
 					if (file_exists($picname)) {
+<<<<<<< HEAD
 						echo "<p width=\"300px\"id=\"imgtd\"><img width=\"230px\" src=".$picname." alt=\"\" class=\"intropic\"></p>" ;
+=======
+						echo "<p id=\"imgtd\"><img src=".$picname." alt=\"\" class=\"intropic\"></p>" ;
+>>>>>>> origin/master
 					} else {
 						echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\" class=\"intropic\"></p>";
 					}
