@@ -105,21 +105,34 @@ include 'core/init.php';
 			$con->close();
 			?>
 
-	<div class="comment">
+<div class="comment">
 		<div class="header">Comments</div>
 		
 		<?php
-			echo "<textarea id=\"newcomment\">Please Insert Your Comment</textarea>";
+		
+					
 			$con = mysqli_connect("localhost:3306","root","");
 				if(!$con)
 				{
 					die('Could not connect: ' . mysqli_error());
 				}
-
 				mysqli_select_db($con,"moviereviewwebsite");
-
-				echo "<button id=\"submitcomment\">Submit</button>";
-		?>
+				echo "<form class=\"form-horizontal\" id=\"register-form\"  method=\"post\">";
+				echo "<input type=\"text\" id=\"newcommentbar\" placeholder=\"Please insert your comment here.\" name=\"newcomment\">";	
+				$newuser=$usernumber;
+				$newmovie=$movienumber;
+				$newcomment=$_POST['newcomment'];
+				echo "<button type=\"submit\" form=\"register-form\"id=\"commentsubmit\">Submit</button>";
+				if($newcomment!=NULL){
+					$mysql=mysql_query("INSERT INTO a6_comment (UserID, MovieID, Content) VALUES ('$newuser', '$newmovie', '$newcomment')");
+				}else{
+					echo "<p class=\"alert\">alert(\"Please enter the comment!\")</p>";
+				}
+				$newcomment=NULL;
+				
+				echo "</form>";
+				$con->close();
+		?>		
 		
 	</div>
 	<!-- End of Comment -->
