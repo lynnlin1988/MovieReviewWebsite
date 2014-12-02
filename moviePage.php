@@ -126,7 +126,7 @@ include 'core/init.php';
 				if($newcomment!=NULL){
 					$mysql=mysql_query("INSERT INTO a6_comment (UserID, MovieID, Content) VALUES ('$newuser', '$newmovie', '$newcomment')");
 				}else{
-					echo "<p class=\"alert\">alert(\"Please enter the comment!\")</p>";
+					echo "<p class=\"alert\">Please enter the comment!</p>";
 				}
 				$newcomment=NULL;
 				
