@@ -16,6 +16,10 @@ function user_id_from_username($username){
 	return mysql_result(mysql_query("SELECT ID FROM a6_user WHERE Username='$username'"), 0, ID);
 }
 
+function username_from_id($userID){
+	return mysql_result(mysql_query("SELECT Username FROM a6_user WHERE ID='$userID'"), 0);
+}
+
 function login($username, $password){
 	$userID=user_id_from_username($username);
 
@@ -31,6 +35,24 @@ function register($username, $password, $email){
 	$userID=user_id_from_username($username);
 	return $username;
 }
+
+function addFriend($userID1, $userID2){
+	$mysql1=mysql_query("INSERT INTO a6_friend (UserAID, UserBID) VALUES ('$userID1', '$userID2')");
+	$mysql2=mysql_query("INSERT INTO a6_friend (UserAID, UserBID) VALUES ('$userID2', '$userID1')");
+	return true;
+}
+
+function isFriend($userID1, $userID2){
+	$query=mysql_query("SELECT COUNT(*) FROM a6_friend WHERE UserAID = '$userID1' AND UserBID='$userID2'");
+	return (mysql_result($query, 0)==1 ) ? true : false;
+}
+
+function updateProfile($country, $summary, $email){
+	$userID=$_SESSION['user_id'];
+	$mysql=mysql_query("UPDATE a6_user SET Email='$email', Country='$country', Summary='$summary' WHERE ID='$userID'");
+	return true;
+}
+
 
 
 ?>

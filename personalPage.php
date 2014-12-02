@@ -28,7 +28,7 @@ include 'core/init.php';
 	<!--End of navigation bar -->
 
 <?php
-	$memberid=$_GET["b_tmp"];
+	$memberid=$_SESSION['user_id'];
 	$con = mysqli_connect("localhost:3306","root","");
 	if(!$con)
 	{
@@ -107,7 +107,7 @@ include 'core/init.php';
 			}
 			echo "</p>";
 
-			echo "<button>Edit My Profile</button>";
+			echo "<button  href=\"#profile\" data-toggle=\"modal\">Edit My Profile</button>";
 
 		echo "</div>";
 
@@ -206,6 +206,10 @@ include 'core/init.php';
 		include 'includes/widgets/contact.php';
 	?>
 	<!-- end of contact page -->
+
+	<?php
+		include 'includes/widgets/profile.php';
+	?>
 
 
 </body>

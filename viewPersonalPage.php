@@ -108,7 +108,7 @@ include 'core/init.php';
 			}
 			echo "</p>";
 
-			echo "<button style=\"width:200px\">Add <span style=\"font-style:italic\">";
+			echo "<button style=\"width:200px\" href=\"#addFriend\" data-toggle=\"modal\">Add <span style=\"font-style:italic\">";
 			$myquery = mysqli_query($con,"SELECT * FROM a6_user where id=$memberid");
 			while($row = $myquery->fetch_assoc()) {echo "<p>".$row["Username"];}
 			echo "</span> as a Friend</button>";
@@ -212,6 +212,33 @@ include 'core/init.php';
 		include 'includes/widgets/contact.php';
 	?>
 	<!-- end of contact page -->
+
+
+	<div class="modal fade" id="addFriend" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<?php
+				echo "<form class=\"form-horizontal\" id=\"addFriend-form\" action=\"addFriend.php?bID=".$memberid."\" method=\"post\">";
+				?>
+				
+					<div class="modal-header">
+						<h2>Add as a friend</h2>
+					</div>
+					<div class="modal-body">
+
+						<div class="form-group">
+							<label id="addFriend-warning">       Do you want to add this user as a friend? </label>
+						</div>
+					</div>
+					<div class="modal-footer">			
+						<button class="btn btn-primary" type="submit">Yes</button>
+						<a class="btn btn-default" data-dismiss="modal">No</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
 
 </body>
 </html>	
