@@ -53,6 +53,12 @@ function updateProfile($country, $summary, $email){
 	return true;
 }
 
+function contactUs($email, $content, $username){
+	$userID=user_id_from_username($username);
+	$mysql=mysql_query("INSERT INTO a6_contactus (Email, UserID, Content) VALUES ('$email', '$userID', '$content')");
+	return true;
+}
+
 
 
 ?>

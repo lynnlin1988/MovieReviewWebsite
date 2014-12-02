@@ -1,28 +1,28 @@
 	<div class="modal fade" id="contact" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form class="form-horizontal">
+				<form class="form-horizontal" action="contact.php" method="post">
 					<div class="modal-header">
 						<h2>Contact us</h2>
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label for ="contact-email" class="col-lg-3 control-label">Your email:</label>
+							<label for ="contact-email" class="col-lg-3 control-label">Your email*:</label>
 							<div class="col-lg-9">
-								<input type="email" class="form-control" id="contact-email" placeholder="you@example.com">
+								<input type="email" class="form-control" id="contact-email" placeholder="you@example.com" name="email">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for ="contact-username" class="col-lg-3 control-label">Username:</label>
 							<div class="col-lg-9">
-								<input type="text" class="form-control" id="contact-username" placeholder="Optional">
+								<input type="text" class="form-control" id="contact-username" placeholder="Optional" name="username">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for ="contact-msg" class="col-lg-3 control-label">Message:</label>
+							<label for ="contact-msg" class="col-lg-3 control-label">Message*:</label>
 							<div class="col-lg-9">
-								<textarea class="form-control" rows="8"></textarea>
+								<textarea class="form-control" rows="8" name="content"></textarea>
 							</div>
 						</div>
 					</div>
