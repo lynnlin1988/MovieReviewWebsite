@@ -23,7 +23,7 @@
 							echo "<td width='300px'>";
 							echo "<a href=\"moviePage.php?a_tmp=".$m."\" id=\"example\" ><img src=\"img/sample".$m.".jpg\" alt=\"\" class=\"img-responsive\"  width=\"230px\" height=\"360px\"id=\"sample".$m."\"><span class=\"movieTitleInList\" >".$row["Title"]."</span></a></td>";
 							echo "<script>$('#sample".$m."').popover({
-								title:'".$row['Title']."',
+								title:'".$row['Title']." (".$row['Rating']."/10)',
 								content:'";
 							echo "Length: ".$row["Length"]." "."Country: ".$row["Country"]."(".$row["Language"].")"."'})</script>";
 							if($m%5==0){
