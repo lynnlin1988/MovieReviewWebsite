@@ -50,7 +50,17 @@ include 'core/init.php';
 	</div>
 	<!-- End of new reviews -->
 
+
+
+
 	<!-- Start of popular movie list -->
+	<script>
+	$(function ()
+	{ $(".example").popover();
+	});
+	</script>
+
+
 	<?php
 	include 'includes/widgets/popularMovies.php';
 	?>
