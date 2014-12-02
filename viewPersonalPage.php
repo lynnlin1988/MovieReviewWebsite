@@ -29,7 +29,7 @@ include 'core/init.php';
 	<!--End of navigation bar -->
 
 <?php
-	$memberid=2;
+	$memberid=$_GET["b_tmp"];
 	$con = mysqli_connect("localhost:3306","root","");
 	if(!$con)
 	{

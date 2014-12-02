@@ -8,15 +8,21 @@
 
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="Homepage/img/Avengers.jpg" alt="" class="img-responsive">
+				<?php
+					echo "<a href=\"moviePage.php?a_tmp=11\" id=\"example\" class=\"img-responsive\"><img src=\"Homepage/img/Avengers.jpg\" alt=\"\" class=\"img-responsive\" id=\"sample11\">";
+				?>
 			</div>
 
 			<div class="item">
-				<img src="Homepage/img/CaptainAmerica.jpg" alt="" class="img-responsive">
+				<?php
+					echo "<a href=\"moviePage.php?a_tmp=12\" id=\"example\" class=\"img-responsive\"><img src=\"Homepage/img/CaptainAmerica.jpg\" alt=\"\" class=\"img-responsive\" id=\"sample12\">";
+				?>
 			</div>
 
 			<div class="item">
-				<img src="Homepage/img/Thor.jpg" alt="" class="img-responsive">
+				<?php
+					echo "<a href=\"moviePage.php?a_tmp=13\" id=\"example\" class=\"img-responsive\"><img src=\"Homepage/img/Thor.jpg\" alt=\"\" class=\"img-responsive\" id=\"sample13\">";
+				?>
 			</div>
 
 		</div>

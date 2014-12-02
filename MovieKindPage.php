@@ -5,11 +5,11 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Movie Review Website</title>
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
-		<link href="../css/bootstrap-responsive.css" rel="stylesheet">
-		<link href="styles.css" rel="stylesheet">
-		<script src="../jquery-1.11.1.js" type="text/javascript"></script>
-	  	<script src="index.js" type="text/javascript"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="MovieKindPage/styles.css" rel="stylesheet">
+		<script src="jquery-1.11.1.js" type="text/javascript"></script>
+	  	<script src="MovieKindPage/index.js" type="text/javascript"></script>
 	</head>
 
 <body>
@@ -101,11 +101,11 @@
 					echo "<td class=\"singleblank\">";
 					$picname="img/sample".$row["MovieID"].".jpg";
 					if (file_exists($picname)) {
-						echo "<p id=\"imgtd\"><img width=\"240px\" src=".$picname." alt=\"\" class=\"intropic\"></p>" ;
+						echo "<p width=\"300px\"id=\"imgtd\"><img width=\"230px\" src=".$picname." alt=\"\" class=\"intropic\"></p>" ;
 					} else {
 						echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\" class=\"intropic\"></p>";
 					}
-					echo "<a href=\"../MoviePage/index.php?a_tmp=".$row["MovieID"]."\"><p id=\"movietitle\" style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Title"]."</a></p></td>";
+					echo "<a href=\"moviePage.php?a_tmp=".$row["MovieID"]."\"><p id=\"movietitle\" style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Title"]."</a></p></td>";
 					if($i%5==0){
 						echo "</tr>";
 					}
