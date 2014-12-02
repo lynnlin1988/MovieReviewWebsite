@@ -29,7 +29,7 @@ include 'core/init.php';
 	<?php
 		echo "<div class=\"movieinfo\">";
 		$movienumber=$_GET["a_tmp"];
-		$usernumber=0;
+		$usernumber=5;
 			echo "<div class=\"moviepic\"><img src=\"img/sample".$movienumber.".jpg\" alt=\"\" class=\"intropic\"></div>";
 			echo "<div class=\"star\">";
 				
