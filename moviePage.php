@@ -87,9 +87,41 @@ include 'core/init.php';
 			echo "<p>";
 			$moviequery = mysqli_query($con,"SELECT * FROM a6_movie where id=$movienumber");
 			while($row = $moviequery->fetch_assoc()) {
-				echo $row["Rating"];
+				echo round($row["Rating"],1);
 			}
 			echo "/10";
+			echo "<p class=\"header\">Please Tell Us How You Think of This Movie!</p>";
+
+
+			echo "<form class=\"form-horizontal\" id=\"newratingform\"  method=\"post\">";
+				echo "<p id=\"ratingrow\"><input type=\"text\" id=\"newrating\" placeholder=\"10\" name=\"newrating\">";
+				echo "/10</p>";	
+				$newuser=$usernumber;
+				$newmovie=$movienumber;
+				$newrating=$_POST['newrating'];
+				echo "<button type=\"submit\" form=\"newrating\"id=\"ratingsubmit\">Submit</button>";
+				if($newrating<=10 && $newrating>=1){
+					$mysql=mysql_query("INSERT INTO a6_rating (UserID, MovieID, Rating) VALUES ('$newuser', '$newmovie', '$newrating')");
+				}else{
+					echo "<p>Please Insert a score in 1-10!</p>";
+				}
+				$sumscore=0;
+				$sumnumber=0;
+				$ratingquery = mysqli_query($con,"SELECT * FROM a6_rating where MovieId=$movienumber");
+				while($row = $ratingquery->fetch_assoc()) {
+					$sumscore=$sumscore+$row['Rating'];
+					$sumnumber=$sumnumber+1;
+				}
+				$newscore=$sumscore/$sumnumber;
+				$mysql=mysql_query("UPDATE a6_movie SET Rating=$newscore where ID=$movienumber");
+
+				$newrating=NULL;
+				
+				echo "</form>";
+
+
+
+
 			echo "</div>";
 			echo "</div>";
 
@@ -122,7 +154,7 @@ include 'core/init.php';
 				$newuser=$usernumber;
 				$newmovie=$movienumber;
 				$newcomment=$_POST['newcomment'];
-				echo "<button type=\"submit\" form=\"register-form\"id=\"commentsubmit\">Submit</button>";
+				echo "<p><button type=\"submit\" form=\"register-form\"id=\"commentsubmit\">Submit</button></p>";
 				if($newcomment!=NULL){
 					$mysql=mysql_query("INSERT INTO a6_comment (UserID, MovieID, Content) VALUES ('$newuser', '$newmovie', '$newcomment')");
 				}else{

@@ -125,7 +125,7 @@ include 'core/init.php';
 		$myfriends = mysqli_query($con,"SELECT * FROM a6_user inner join a6_friend on a6_friend.UserBID=a6_user.id where a6_friend.UserAID=$memberid");
 		$i=0;
 		if($myfriends->num_rows==0){
-					echo "<tr><p style=\"color:grey \">No friend relationship found!</tr>";
+			echo "<tr><p style=\"color:grey \">No friend relationship found!</tr>";
 		}
 		while($row = $myfriends->fetch_assoc()) {
 				if($i%5==0){
@@ -139,7 +139,7 @@ include 'core/init.php';
 				} else {
 					echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\" class=\"intropic\"></p>";
 				}
-				echo "<p style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Username"]."</p></td>";
+				echo "<a href=\"viewpersonalPage.php?b_tmp=".$row["UserBID"]."\"><p style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Username"]."</p></td></a>";
 				if($i%5==0){
 					echo "</tr>";
 				}

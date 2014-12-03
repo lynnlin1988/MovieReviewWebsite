@@ -87,3 +87,12 @@
     font-style: italic;;
     color: grey;
 }
+
+#newrating{
+    width:50px;
+}
+
+#newcommentbar{
+    width:900px;
+    height: 100px;
+}
