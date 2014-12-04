@@ -10,7 +10,7 @@
 
 			mysqli_select_db($con,"moviereviewwebsite");
 
-			if(logged_in()==true){
+			if(isset($_SESSION['id'])){
 				$usernumber=$_SESSION['user_id'];
 			}else{
 				$usernumber=5;
