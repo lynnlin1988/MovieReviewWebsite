@@ -3,9 +3,9 @@
 			<div class="navbar-header">
 				<a href="./index.php" class="navbar-brand">Home Page</a>
 
-				<form class="navbar-form navbar-left" role="search">
+				<form class="navbar-form navbar-left" role="search" action="search.php" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
+						<input type="text" class="form-control" placeholder="Search" name="search">
 					</div>
 					<button type="submit" class="btn btn-inverse">Submit</button>
 				</form>
@@ -38,11 +38,11 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Share to <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Google+</a></li>
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">WeChat</a></li>
-							<li><a href="#">Weibo</a></li>
+							<li><a href="https://plus.google.com/share?url=localhost/MovieReviewWebsite" target="_blank">Google+</a></li>
+							<li><a href="https://www.facebook.com/sharer/sharer.php?u=localhost/MovieReviewWebsite" target="_blank">Facebook</a></li>
+							<li><a href="https://twitter.com/share" data-url="http://localhost/MovieReviewWebsite/" data-text="Movie Review Website" data-size="large" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+							<li><a href="http://service.weibo.com/share/share.php?url=localhost/MovieReviewWebsite" target="_blank">Weibo</a></li>
 						</ul>
 					</li>
 					<li><a href="#contact" data-toggle="modal">Contact us</a></li>

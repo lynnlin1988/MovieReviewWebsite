@@ -59,6 +59,20 @@ function contactUs($email, $content, $username){
 	return true;
 }
 
+function searchCount($search){
+	$mysql=mysql_query("SELECT COUNT(*) FROM a6_movie WHERE Title LIKE '%$search%'");
+	return mysql_result($mysql, 0);
+}
+
+function search($search, $row){
+	$mysql=mysql_query("SELECT Title FROM a6_movie WHERE Title LIKE '%$search%'");
+	return mysql_result($mysql, $row);
+}
+
+function movie_id_from_title($title){
+	return mysql_result(mysql_query("SELECT ID FROM a6_movie WHERE Title='$title'"), 0);
+}
+
 
 
 ?>

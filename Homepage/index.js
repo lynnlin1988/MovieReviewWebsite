@@ -2,36 +2,21 @@ $(document).ready(function(){
 
 //	alert('test');
 
+	var $reviews = $("#newReviews");
+	setInterval(function () {
+		$reviews.load("includes/widgets/newReviews.php");
+	}, 2000);
+
+
 	$('#login-form').on('submit', function(e) {
-	//	alert('submitted')
-	//	alert("Hi");
-		submit_login(e);
-	//	e.preventDefault();
-		
-		
+		submit_login(e);	
 	});
-
-
 
 	$('#register-form').on('submit', function(e) {
-	//	alert('submitted')
-	//	alert("Hi");
 		submit_register(e);
-	//	e.preventDefault();
-		
-		
 	});
 
-})
-
-
-/*
-var $reviews = $("#newReviews");
-setInterval(function () {
-    $reviews.load("../index.php #newReviews");
- //	$reviews.load("../includes/widgets/newReviews.php");
-}, 2000);
-*/
+});
 
 
 var submit_register=function(e){
@@ -41,7 +26,6 @@ var submit_register=function(e){
 
 	if (id=="" || pwd=="") {
 		alert('Username and password cannot be empty');
-//		$('#login').modal('show');
 		e.preventDefault();
 	}
 	else if (email=="") {
@@ -49,8 +33,7 @@ var submit_register=function(e){
 		e.preventDefault();
 	}
 	else {
-//		alert('We will send you a confirmation email shortly');
-//		$('#register-close').trigger("click");
+
 	}
 }
 
