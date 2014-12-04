@@ -67,7 +67,8 @@ include 'core/init.php';
 	<!-- Start of popular movie list -->
 	<script>
 	$(function ()
-	{ $("#example").popover();
+	{ 	$("#example").popover();
+		$("#exampleleft").popover({placement:'bottom'});
 	});
 	</script>
 

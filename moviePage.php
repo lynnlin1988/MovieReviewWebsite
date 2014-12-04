@@ -29,7 +29,12 @@ include 'core/init.php';
 	<?php
 		echo "<div class=\"movieinfo\">";
 		$movienumber=$_GET["a_tmp"];
-		$usernumber=5;
+		if(logged_in()==true){
+			$usernumber=$_SESSION['user_id'];
+		}else{
+			$usernumber=5;
+		}
+
 			echo "<div class=\"moviepic\"><img src=\"img/sample".$movienumber.".jpg\" alt=\"\" class=\"intropic\"></div>";
 			echo "<div class=\"star\">";
 				
@@ -87,7 +92,7 @@ include 'core/init.php';
 			echo "<p>";
 			$moviequery = mysqli_query($con,"SELECT * FROM a6_movie where id=$movienumber");
 			while($row = $moviequery->fetch_assoc()) {
-				echo round($row["Rating"],1);
+				echo $row["Rating"];
 			}
 			echo "/10";
 			echo "<p class=\"header\">Please Tell Us How You Think of This Movie!</p>";
@@ -99,12 +104,13 @@ include 'core/init.php';
 				$newuser=$usernumber;
 				$newmovie=$movienumber;
 				$newrating=$_POST['newrating'];
-				echo "<button type=\"submit\" form=\"newrating\"id=\"ratingsubmit\">Submit</button>";
+				echo "<button type=\"submit\" form=\"newratingform\"id=\"ratingsubmit\">Submit</button>";
 				if($newrating<=10 && $newrating>=1){
 					$mysql=mysql_query("INSERT INTO a6_rating (UserID, MovieID, Rating) VALUES ('$newuser', '$newmovie', '$newrating')");
 				}else{
 					echo "<p>Please Insert a score in 1-10!</p>";
 				}
+				
 				$sumscore=0;
 				$sumnumber=0;
 				$ratingquery = mysqli_query($con,"SELECT * FROM a6_rating where MovieId=$movienumber");
@@ -112,11 +118,11 @@ include 'core/init.php';
 					$sumscore=$sumscore+$row['Rating'];
 					$sumnumber=$sumnumber+1;
 				}
-				$newscore=$sumscore/$sumnumber;
+				$newscore=round($sumscore/$sumnumber,1);
 				$mysql=mysql_query("UPDATE a6_movie SET Rating=$newscore where ID=$movienumber");
 
 				$newrating=NULL;
-				
+
 				echo "</form>";
 
 
@@ -186,9 +192,18 @@ include 'core/init.php';
 				}
 	 		echo "</h1><ul id=\"newReviewList\">";
 			
-			$moviecommentquery = mysqli_query($con,"SELECT * FROM a6_comment inner join a6_user on a6_comment.UserID=a6_user.ID where a6_comment.MovieID=$movienumber");
+			$moviecommentquery = mysqli_query($con,"SELECT * FROM a6_comment inner join a6_user on a6_comment.UserID=a6_user.ID where a6_comment.MovieID=$movienumber order by a6_comment.ID desc");
 			while($row = $moviecommentquery->fetch_assoc()){
-				echo "<li><a href\"#\">".$row["Username"]."'s comment: ".$row["Content"]."</a></li>";
+				echo "<li><a href=\"";
+
+				if($usernumber==$row["UserID"]){
+					echo "personalPage.php?b_tmp=".$row["UserID"];
+				}else{
+					echo "viewpersonalPage.php?b_tmp=".$row["UserID"];
+				}
+
+
+				echo "\">".$row["Username"]."</a>'s comment: ".$row["Content"]."</li>";
 			}
 			$con->close();
 		?>

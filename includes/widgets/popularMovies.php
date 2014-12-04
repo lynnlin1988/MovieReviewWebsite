@@ -21,7 +21,11 @@
 							}
 							$m=$m+1;
 							echo "<td width='300px'>";
-							echo "<a href=\"moviePage.php?a_tmp=".$m."\" id=\"example\" ><img src=\"img/sample".$m.".jpg\" alt=\"\" class=\"img-responsive\"  width=\"230px\" height=\"360px\"id=\"sample".$m."\"><span class=\"movieTitleInList\" >".$row["Title"]."</span></a></td>";
+							echo "<a href=\"moviePage.php?a_tmp=".$m."\" id=\"example";
+							if($m%5==0){
+								echo "left";
+							}
+							echo "\" ><img src=\"img/sample".$m.".jpg\" alt=\"\" class=\"img-responsive\"  width=\"230px\" height=\"360px\"id=\"sample".$m."\"><span class=\"movieTitleInList\" >".$row["Title"]."</span></a></td>";
 							echo "<script>$('#sample".$m."').popover({
 								title:'".$row['Title']." (".$row['Rating']."/10)',
 								content:'";
