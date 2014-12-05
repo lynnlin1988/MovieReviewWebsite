@@ -29,6 +29,7 @@ include 'core/init.php';
 
 <?php
 	$memberid=$_SESSION['user_id'];
+	$usernumber=$_SESSION['user_id'];
 	$con = mysqli_connect("localhost:3306","root","");
 	if(!$con)
 	{
@@ -131,11 +132,25 @@ include 'core/init.php';
 				echo "<td>";
 				$picname="img/user".$row["ID"].".jpg";
 				if (file_exists($picname)) {
-					echo "<p id=\"imgtd\"><img src=".$picname." alt=\"\" class=\"intropic\"></p>" ;
+					echo "<p id=\"imgtd\"><img src=".$picname." alt=\"\"  width=\"125\" height=\"125\"></p>" ;
 				} else {
-					echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\" class=\"intropic\"></p>";
+					echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\"  width=\"125\" height=\"125\"></p>";
 				}
-				echo "<a href=\"viewpersonalPage.php?b_tmp=".$row["UserBID"]."\"><p style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Username"]."</p></td></a>";
+
+
+				if($row["ID"]!=5){
+					echo "<a href=\"";
+					
+						if($row["ID"]!=$usernumber){
+							echo "view";
+						}
+
+					echo "personalPage.php?b_tmp=".$row["UserBID"]."\"><p style=\"font-size:150%;font-weight:500;text-align:left\">".$row["Username"]."</p></td></a>";
+				}else{
+					echo "<a href=\"#\"><p style=\"font-size:150%;font-weight:500;text-align:left\">".$row["Username"]."</p></td></a>";
+				}
+
+
 				if($i%5==0){
 					echo "</tr>";
 				}
@@ -164,9 +179,13 @@ include 'core/init.php';
 		
 		while($row = $myreviews->fetch_assoc()) {
 			if(!$row["Title"]){
-				echo "<li style=\"color:grey\">Let's Make Some Comments on Your Favorite Movies!</li>";
-			}	
-			echo "<li class=\"newReview\">Comment on <span class=\"movieTitleInReview\">'".$row["Title"]."': </span><span>".$row["Content"]."</span></li>";
+				echo "<li style=\"color:grey\">There's no comment made by ";
+				echo $row["Username"]."</li>";
+			}else{
+				echo "<li class=\"newReview\">Comment on <a href=\"moviePage.php?a_tmp=".$row['MovieID']."\"class=\"movieTitleInReview\">'".$row["Title"]."': </a><span>".$row["Content"]."</span></li>";
+				echo "<from name=\"delete\" action=\"\delete.php\" method=\"POST\">";
+				echo "<input type=\"submit\" name=\"deletecomment\" value=delete></form>";
+			}
 		}
 
 		echo "</ul>";

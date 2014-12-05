@@ -8,7 +8,7 @@ include 'core/init.php';
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Home Page</title>
+	<title>Home Page</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="ViewPersonalPage/styles.css" rel="stylesheet">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -30,6 +30,15 @@ include 'core/init.php';
 
 <?php
 	$memberid=$_GET["b_tmp"];
+
+	if(logged_in()==true){
+			$usernumber=$_SESSION['user_id'];
+		}else{
+			$usernumber=5;
+	}
+
+
+
 	$con = mysqli_connect("localhost:3306","root","");
 	if(!$con)
 	{
@@ -135,11 +144,23 @@ include 'core/init.php';
 				echo "<td>";
 				$picname="img/user".$row["ID"].".jpg";
 				if (file_exists($picname)) {
-					echo "<p id=\"imgtd\"><img src=".$picname." alt=\"\" class=\"intropic\"></p>" ;
+					echo "<p id=\"imgtd\"><img src=".$picname." alt=\"\"  width=\"125\" height=\"125\"></p>" ;
 				} else {
-					echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\" class=\"intropic\"></p>";
+					echo "<p id=\"imgtd\"><img src=\"img/no-profile-img.gif\" alt=\"\"  width=\"125\" height=\"125\"></p>";
 				}
-				echo "<a href=\"viewpersonalPage.php?b_tmp=".$row["UserBID"]."\"><p style=\"font-size:150%;font-weight:500;text-align:center\">".$row["Username"]."</p></td></a>";
+
+				if($row["ID"]!=5){
+					echo "<a href=\"";
+					
+						if($row["UserBID"]!=$usernumber){
+							echo "view";
+						}
+
+					echo "personalPage.php?b_tmp=".$row["UserBID"]."\"><p style=\"font-size:150%;font-weight:500;text-align:left\">".$row["Username"]."</p></td></a>";
+				}else{
+					echo "<a href=\"#\"><p style=\"font-size:150%;font-weight:500;text-align:left\">".$row["Username"]."</p></td></a>";
+				}
+
 				if($i%5==0){
 					echo "</tr>";
 				}
@@ -167,11 +188,13 @@ include 'core/init.php';
 		echo "<ul id=\"myReviewList\">";
 		while($row = $myquery->fetch_assoc()) {echo $row["Username"];}
 		echo ".</li>";
+
 		while($row = $myreviews->fetch_assoc()) {
-			echo "<li class=\"newReview\">Comment on <span class=\"movieTitleInReview\">'".$row["Title"]."': </span><span>".$row["Content"]."</span></li>";
 			if(!$row["Title"]){
 				echo "<li style=\"color:grey\">There's no comment made by ";
-				$myquery = mysqli_query($con,"SELECT * FROM a6_user where id=$memberid");
+				echo $row["Username"]."</li>";
+			}else{
+				echo "<li class=\"newReview\">Comment on <a href=\"moviePage.php?a_tmp=".$row['MovieID']."\"class=\"movieTitleInReview\">'".$row["Title"]."': </a><span>".$row["Content"]."</span></li>";
 			}
 		}
 

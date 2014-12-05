@@ -9,9 +9,13 @@ include 'core/init.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Movie Review Website</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<link href="css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="MoviePage/styles.css" rel="stylesheet">
-		<script src="jquery-1.11.1.js" type="text/javascript"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="http://www.cs.unc.edu/Courses/comp426-f14/jquery-1.11.1.js" type="text/javascript"></script>
+		<script src="js/bootstrap-tooltip.js"></script>
+		<script src="js/bootstrap-popover.js"></script>
 	  	
 	</head>
 
@@ -234,6 +238,11 @@ include 'core/init.php';
 		include 'includes/widgets/contact.php';
 	?>
 	<!-- end of contact page -->
+
+	<?php
+		include 'includes/widgets/profile.php';
+	?>
+
 
 
 </body>

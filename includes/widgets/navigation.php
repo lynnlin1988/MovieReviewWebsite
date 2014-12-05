@@ -5,7 +5,7 @@
 
 				<form class="navbar-form navbar-left" role="search" action="search.php" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search" name="search">
+						<input type="text" class="form-control" placeholder="Search For Movie" name="search">
 					</div>
 					<button type="submit" class="btn btn-inverse">Submit</button>
 				</form>
