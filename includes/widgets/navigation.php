@@ -40,7 +40,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="https://plus.google.com/share?url=localhost/MovieReviewWebsite" target="_blank">Google+</a></li>
 							<li><a href="https://www.facebook.com/sharer/sharer.php?u=localhost/MovieReviewWebsite" target="_blank">Facebook</a></li>
-							<li><a href="https://twitter.com/share" data-url="http://localhost/MovieReviewWebsite/" data-text="Movie Review Website" data-size="large" data-count="none">Tweet</a>
+							<li><a href="https://twitter.com/share" data-url="http://localhost/MovieReviewWebsite/" data-text="Movie Review Website" data-size="large" data-count="none">Twitter</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
 							<li><a href="http://service.weibo.com/share/share.php?url=localhost/MovieReviewWebsite" target="_blank">Weibo</a></li>
 						</ul>

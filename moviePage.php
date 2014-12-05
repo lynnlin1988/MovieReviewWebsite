@@ -137,7 +137,7 @@ include 'core/init.php';
 
 
 			echo "<div class=\"movieintro\">";
-			echo "<p class=\"header\">SotryLine</p><p>";
+			echo "<p class=\"header\">StoryLine</p><p>";
 			$moviequery = mysqli_query($con,"SELECT * FROM a6_movie where id=$movienumber");
 			while($row = $moviequery->fetch_assoc()) {
 				echo $row["Summary"];

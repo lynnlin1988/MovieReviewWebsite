@@ -10,7 +10,7 @@
 
 			mysqli_select_db($con,"moviereviewwebsite");
 
-			if(isset($_SESSION['id'])){
+			if(isset($_SESSION['user_id'])==true){
 				$usernumber=$_SESSION['user_id'];
 			}else{
 				$usernumber=5;
@@ -26,7 +26,7 @@
 					if($n<12){
 						echo "<p style=\"font-size: 100%\">";
 						if($usernumber==$row["UserID"]){
-							echo "<a href=\"personalPage.php?b_tmp=".$row["UserID"]."\">".$row["Username"]."</a>";
+							echo "<a href=\"personalPage.php?b_tmp=".$usernumber."\">".$row["Username"]."</a>";
 						}else{
 							echo "<a href=\"viewpersonalPage.php?b_tmp=".$row["UserID"]."\">".$row["Username"]."</a>";
 						}

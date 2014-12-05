@@ -67,7 +67,7 @@ include 'core/init.php';
 				}
 				
 			}
-			echo "<p class=\"header\">Countact: </p>";
+			echo "<p class=\"header\">Contact: </p>";
 			$myquery = mysqli_query($con,"SELECT * FROM a6_user where id=$memberid");
 			while($row = $myquery->fetch_assoc()) {
 				if(!$row["Email"]){
@@ -78,7 +78,7 @@ include 'core/init.php';
 				}	
 			}
 
-
+/*
 			echo "<p class=\"header\">Interest: </p>";
 			$myinterestquery = mysqli_query($con,"SELECT * FROM a6_category 
 				inner join a6_usercategory on a6_category.ID=a6_usercategory.categoryID
@@ -94,6 +94,7 @@ include 'core/init.php';
 				}	
 			
 			echo "</p>";
+		*/
 
 
 			echo "<p class=\"header\">Motto: </p>";

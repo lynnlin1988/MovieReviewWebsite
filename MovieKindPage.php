@@ -6,10 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Movie Review Website</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<link href="css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="MovieKindPage/styles.css" rel="stylesheet">
+		<script src="js/bootstrap.js"></script>
 		<script src="jquery-1.11.1.js" type="text/javascript"></script>
 	  	<script src="MovieKindPage/index.js" type="text/javascript"></script>
+
 	</head>
 
 <body>
@@ -55,7 +58,7 @@
 			</div>
 		</div>
 	</div> 
-	<!--End of navigation bar -->
+	<-- End of navigation bar -->
 
 
 
