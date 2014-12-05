@@ -183,8 +183,6 @@ include 'core/init.php';
 				echo $row["Username"]."</li>";
 			}else{
 				echo "<li class=\"newReview\">Comment on <a href=\"moviePage.php?a_tmp=".$row['MovieID']."\"class=\"movieTitleInReview\">'".$row["Title"]."': </a><span>".$row["Content"]."</span></li>";
-				echo "<from name=\"delete\" action=\"\delete.php\" method=\"POST\">";
-				echo "<input type=\"submit\" name=\"deletecomment\" value=delete></form>";
 			}
 		}
 
